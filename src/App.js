@@ -12,6 +12,7 @@ import Header from './components/header/header.component'
 import { auth, createUserProfileDocument } from './firebase/firebase.utils'
 import { setCurrentUser } from './redux/user/user.actions'
 import { selectCurrentUser } from './redux/user/user.selector'
+import CheckoutPage from './pages/checkout/checkout.component'
 
 class App extends Component {
   unsubscribeFromAuth = null
@@ -48,6 +49,7 @@ class App extends Component {
         <Switch>
           <Route exact path={'/'} component={Homepage} />
           <Route path={'/shop'} component={ShopPage} />
+          <Route exact path={'/checkout'} component={CheckoutPage} />
           <Route
             exact path={'/signin'}
             render={() => this.props.currentUser ?
